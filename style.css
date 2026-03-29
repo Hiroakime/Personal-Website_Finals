@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --base-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #cdb891;
+    --secondary-color: #8D8DFF;
+    --color-1: #F9F6F3;
+    --color-2: #F3F7F9;
+    --color-3: #F6F3F9
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+}
+
+body {
+    padding: 1em;
+    background-color: var(--base-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+    color: var(--text-color);
+}
+
+strong { 
+    font-family: 'Merriweather', serif; 
+    font-size: 1.25rem; 
+}
+
+nav {
+    margin: 1em auto 3em auto;
+    width: min(1000px, 100%);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 2em;
+}
+
+nav li :first-child {
+    margin-right: auto;
+    font-family: 'Merriweather Sans', 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+header, section {
+    margin: 2em auto;
+    width: min(75em, 100%);
+    background-color: var(--color-1);
+    padding: min(2em, 15%);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3em;
+}
+
+header img {
+    max-width: 100%;
+    border-radius: 1em;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.text-container {
+    flex: 0 1 34em;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+.text-container p {
+    margin: .75em 0 1em 0;
+    font-size: 1.25rem;
+}
+
+.cta-button {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: var(--primary-color);
+    padding: .75em 1.25em;
+    border-radius: .5em;
+    font-weight: 600;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+    transform-origin: center;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+section {
+    padding: 3em min(2em, 15%);
+    background-color: var(--color-2);
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+section p {
+    margin-top: 1em;
+    font-size: 1.25em;
+}
+
+#about details {
+    margin-top: 1rem;
+}
+
+details summary {
+    cursor: pointer;
+}
+details summary strong {
+    text-decoration: none;
+    transition: color 140ms ease, text-decoration 140ms ease;
+}
+details summary:hover strong,
+details summary:focus strong,
+details summary:focus-visible strong {
+    text-decoration: underline;
+}
+details summary:focus-visible {
+    outline: 3px solid rgba(141,141,255,0.12);
+    outline-offset: 4px;
+    border-radius: 0.25em;
+}
+
+section[id="projects/Portfolio"] > div > p {
+    margin-bottom: 1rem;
+}
+section[id="projects/Portfolio"] details {
+    margin-top: 1rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+section p {
+    margin-top: 1em;
+    font-size: 1.25em;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+section p {
+    margin-top: 1em;
+    font-size: 1.25em;
+}
+
+.grid-container {
+    margin: 2em auto;
+    display: grid;
+        width: min(820px, 94%);
+        max-width: 820px;
+        grid-template-columns: 1.4fr 1fr;
+        grid-template-rows: repeat(2, minmax(120px, 1fr));
+    grid-template-areas:
+        "img-1 img-2"
+        "img-1 img-3";
+        gap: 0.5em;
+}
+
+.grid-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .5em;
+    transition: 120ms ease;
+    display: block;
+}
+
+.grid-container img:hover {
+    transform: scale(1.03);
+}
+
+#contact ul li + li {
+    margin-top: 0.5rem;
+}
+
+#contact > div > p {
+    margin-bottom: 0.5rem;
+}
+
+#contact > details#social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+}
+.social-links a + a {
+    margin-top: 0.5rem;
+}
+
+#contact > div > details {
+    margin-top: 0.5rem;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+    text-decoration: underline;
+    color: var(--secondary-color);
+}
+.social-links a:focus-visible {
+    outline: 3px solid rgba(141,141,255,0.12);
+    outline-offset: 3px;
+    border-radius: 0.25em;
+}
+
+details > .social-links {
+    margin-top: 0.5rem;
+}
+
+h6 {
+    font-size: 1.5rem;
+}
+
+section p {
+    margin-top: 1em;
+    font-size: 1.25em;
+}
